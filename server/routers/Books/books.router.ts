@@ -6,6 +6,6 @@ import { HttpGetAllBooks } from './books.controller.js';
 
 const booksRouter: RouterType = Router();
 
-booksRouter.get('/', bookValidator, HttpGetAllBooks);
+booksRouter.post('/', bookValidator, HttpGetAllBooks);
 
 export { booksRouter };

@@ -8,12 +8,13 @@ async function getBooksByQuery(query: string) {
         const { data }: AxiosResponse = await axios.get(URL);
 
         return data.items.map(({ volumeInfo, saleInfo }: any) => {
+            const { title, imageLinks, authors, language } = volumeInfo;
             return {
-                title: volumeInfo.title,
-                thumbnail: volumeInfo.imageLinks.smallThumbnail,
-                authors: volumeInfo.authors,
-                language: volumeInfo.language,
-                buyLink: saleInfo.buyLink,
+                title: title || '',
+                thumbnail: imageLinks?.smallThumbnail || '',
+                authors: authors || [],
+                language: language || '',
+                buyLink: saleInfo?.buyLink || null,
             };
         });
     } catch (err) {
