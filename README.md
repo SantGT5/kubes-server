@@ -15,7 +15,6 @@
 
 > **_IMPORTANT:_**  
 > Server runs on port ***8000***
->
 > Be sure port is available
 
 ```
